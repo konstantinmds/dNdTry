@@ -1,0 +1,8 @@
+.app {
+  display: block;
+}
+
+.app__body {
+  display: flex;
+}
+

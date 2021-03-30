@@ -1,8 +1,12 @@
 .app {
-  display: block;
+  display: contents;
 }
 
-.app__body {
+.header {
   display: flex;
 }
 
+
+.app__body {
+  display: contents;
+}

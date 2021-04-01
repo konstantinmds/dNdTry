@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react'
-import { nanoid } from "nanoid"
+import { v4 as uuid } from 'uuid'
 import { DragItem } from './features/ddcomp/DragItem'
 import { moveItem } from './features/ddcomp/moveItem'
 import { findItemIndexById } from './utils/findItemIndexById'
@@ -23,14 +23,13 @@ export interface AppState {
 }
 
 export const appData: AppState = {
-  draggedItem: undefined,
   lists: [
     {
       id: '0',
       text: 'Active Project',
       tasks: [
         {
-          id: nanoid(),
+          id: uuid(),
           projectName: 'projName',
           seqNumber: '1',
           cellName: 'cellName',
@@ -42,20 +41,21 @@ export const appData: AppState = {
       text: 'Choosen Project',
       tasks: [
         {
-          id: nanoid(),
+          id: uuid(),
           projectName: 'projName1',
           seqNumber: '12',
           cellName: 'cellName2',
         },
         {
-          id: nanoid(),
+          id: uuid(),
           projectName: 'projName2',
           seqNumber: '14',
           cellName: 'cellName3',
         },
       ],
     },
-  ]
+  ],
+  draggedItem: undefined,
 }
 
 type Action =
@@ -90,6 +90,7 @@ type Action =
 
 const appStateReducer = (state: AppState, action: Action): AppState => {
   switch (action.type) {
+
     case 'SET_DRAGGED_ITEM': {
       return {
         ...state,
@@ -101,7 +102,7 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
         ...state,
         lists: [
           ...state.lists,
-          { id: nanoid() as string, tasks: [], text: action.payload },
+          { id: uuid() as string, tasks: [], text: action.payload },
         ],
       }
     }
@@ -142,7 +143,7 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
 
 interface AppStateContextProps {
   state: AppState
-  dispatch: React.Dispatch<any>
+  dispatch: any
 }
 
 const AppStateContext = createContext<AppStateContextProps>(

@@ -1,471 +1,479 @@
 [
-  {
-     "projectName":"Car Crash Refresh",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"543",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Car Crash Refresh (SQL Server)",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"322",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Car Crash Refresh (SQL Server)",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"324",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Car Crash Refresh (SQL Server)",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - Merge Staged Files",
-     "sequenceNumber":"42",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Refresh (SQL Server)",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - Merge Staged Files - clone",
-     "sequenceNumber":"42",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Refresh (SQL Server)",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - Reset staging table",
-     "sequenceNumber":"333",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Car Crash Refresh (SQL Server)",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
-     "packageS":"Merge stg to dbo schema - dim_table",
-     "sequenceNumber":"423",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Refresh (SQL Server)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server.ipynb",
-     "packageS":"src to stg - SQL Server columns",
-     "sequenceNumber":"543",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"534",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete - clone",
-     "sequenceNumber":"534",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - All Notebooks",
-     "sequenceNumber":"53",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Car Crash Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - Merge Staged Files",
-     "sequenceNumber":"234",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Car Crash Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
-     "packageS":"Ingest files - Reset staging table",
-     "sequenceNumber":"432",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
-     "packageS":"Truncate STG tables",
-     "sequenceNumber":"532",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Car Crash Setup",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"432",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Car Crash Setup",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"322",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"clone 1",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"4322",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"clone 1",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"42",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"clone 1",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - All Notebooks 1",
-     "sequenceNumber":"223",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"clone 1",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"wee",
-     "sequenceNumber":"0",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"clone 1",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"wee - clone kos",
-     "sequenceNumber":"0",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Develop project",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"432",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Develop project",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"786",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Develop project",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - All Notebooks",
-     "sequenceNumber":"543",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Develop project",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
-     "packageS":"Ingest files - Merge Staged Files",
-     "sequenceNumber":"323",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Evaluate Expression",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"543",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Evaluate Expression",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"432",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Evaluate Expression",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - Merge Staged Files",
-     "sequenceNumber":"423",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Evaluate Expression",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - Notebook Contents",
-     "sequenceNumber":"432",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Evaluate Expression",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"Merge stg to dbo schema - dim_table",
-     "sequenceNumber":"423",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Evaluate Expression",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"Merge stg to dbo schema - dim_table - clone",
-     "sequenceNumber":"423",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Export to Flat Files",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"1",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Export to Flat Files",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"Ingest files - All Notebooks",
-     "sequenceNumber":"222",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Import Tables",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"Ingest files - All Notebooks",
-     "sequenceNumber":"423",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Ingest Notebooks",
-     "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
-     "packageS":"Ingest files - Notebook Contents",
-     "sequenceNumber":"400",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Ingest Notebooks",
-     "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
-     "packageS":"Ingest files - Reset staging table",
-     "sequenceNumber":"100",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Ingest Notebooks",
-     "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
-     "packageS":"Ingest files - Stage Files in Database",
-     "sequenceNumber":"200",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Kosta_test1",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"2",
-     "parallelexe":"1"
-  },
-  {
-     "projectName":"Kosta_test1",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"Ingest files - Reset staging table",
-     "sequenceNumber":"42",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Log Clean-up",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
-     "packageS":"elt framework log delete",
-     "sequenceNumber":"210",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Log Clean-up",
-     "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
-     "packageS":"eltsnap log delete",
-     "sequenceNumber":"210",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (AzureSQL)",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"Ingest files - All Notebooks",
-     "sequenceNumber":"321",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Metadata Refresh (AzureSQL)",
-     "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
-     "packageS":"Ingest files - All Notebooks - clone",
-     "sequenceNumber":"321",
-     "parallelexe":"0"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"dim delete - dbo - dim_column",
-     "sequenceNumber":"210",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"dim delete - dbo - dim_table",
-     "sequenceNumber":"200",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
-     "packageS":"Insert Metadata Server Name (snowflake)",
-     "sequenceNumber":"100",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Merge stg to dbo schema - dim_column",
-     "sequenceNumber":"190",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Merge stg to dbo schema - dim_table",
-     "sequenceNumber":"180",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
-     "packageS":"Merge stg to meta schema - dim_column (snowflake)",
-     "sequenceNumber":"170",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
-     "packageS":"Merge stg to meta schema - dim_table (snowflake)",
-     "sequenceNumber":"160",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
-     "packageS":"Merge stg to meta schema (snowflake) - dim_database",
-     "sequenceNumber":"130",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\refresh_database_names_snowflake.sql",
-     "packageS":"Refresh Database Names (snowflake)",
-     "sequenceNumber":"120",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\src_to_stg_snowflake_columns.sql",
-     "packageS":"src to stg - Snowflake columns",
-     "sequenceNumber":"150",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\src_to_stg_snowflake_tables.sql",
-     "packageS":"src to stg - snowflake tables",
-     "sequenceNumber":"140",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh (Snowflake)",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Truncate STG tables",
-     "sequenceNumber":"110",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"dim delete - dbo - dim_column",
-     "sequenceNumber":"510",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"dim delete - dbo - dim_table",
-     "sequenceNumber":"510",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Insert Metadata Server Name",
-     "sequenceNumber":"110",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Merge stg to dbo schema - dim_column",
-     "sequenceNumber":"420",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Merge stg to dbo schema - dim_table",
-     "sequenceNumber":"420",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Merge stg to meta schema - dim_column",
-     "sequenceNumber":"410",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Merge stg to meta schema - dim_database",
-     "sequenceNumber":"220",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Merge stg to meta schema - dim_table",
-     "sequenceNumber":"410",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Refresh Database Names",
-     "sequenceNumber":"210",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"src to stg - SQL Server columns",
-     "sequenceNumber":"310",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"src to stg - SQL Server tables",
-     "sequenceNumber":"310",
-     "parallelexe":"NULL"
-  },
-  {
-     "projectName":"Metadata Refresh v2",
-     "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
-     "packageS":"Truncate STG tables",
-     "sequenceNumber":"140",
-     "parallelexe":"NULL"
-  }
+   {
+      "pName":"Car Crash Refresh",
+      "tasks":[
+         {
+            "id":"1",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"543"
+         }
+      ]
+   },
+   {
+      "pName":"Car Crash Refresh (SQL Server)",
+      "tasks":[
+         {
+            "id":"2",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"322"
+         },
+         {
+            "id":"3",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"324"
+         },
+         {
+            "id":"4",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - Merge Staged Files",
+            "seqNumber":"42"
+         },
+         {
+            "id":"5",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - Merge Staged Files - clone",
+            "seqNumber":"42"
+         },
+         {
+            "id":"6",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - Reset staging table",
+            "seqNumber":"333"
+         },
+         {
+            "id":"7",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
+            "cellName":"Merge stg to dbo schema - dim_table",
+            "seqNumber":"423"
+         },
+         {
+            "id":"8",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server.ipynb",
+            "cellName":"src to stg - SQL Server columns",
+            "seqNumber":"543"
+         }
+      ]
+   },
+   {
+      "pName":"Car Crash Refresh v2",
+      "tasks":[
+         {
+            "id":"9",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"534"
+         },
+         {
+            "id":"10",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete - clone",
+            "seqNumber":"534"
+         },
+         {
+            "id":"11",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - All Notebooks",
+            "seqNumber":"53"
+         },
+         {
+            "id":"12",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - Merge Staged Files",
+            "seqNumber":"234"
+         },
+         {
+            "id":"13",
+            "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
+            "cellName":"Ingest files - Reset staging table",
+            "seqNumber":"432"
+         },
+         {
+            "id":"14",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
+            "cellName":"Truncate STG tables",
+            "seqNumber":"532"
+         }
+      ]
+   },
+   {
+      "pName":"Car Crash Setup",
+      "tasks":[
+         {
+            "id":"15",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"432"
+         },
+         {
+            "id":"16",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"322"
+         }
+      ]
+   },
+   {
+      "pName":"clone 1",
+      "tasks":[
+         {
+            "id":"17",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"4322"
+         },
+         {
+            "id":"18",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"42"
+         },
+         {
+            "id":"19",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - All Notebooks 1",
+            "seqNumber":"223"
+         },
+         {
+            "id":"20",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"wee",
+            "seqNumber":"0"
+         },
+         {
+            "id":"21",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"wee - clone kos",
+            "seqNumber":"0"
+         }
+      ]
+   },
+   {
+      "pName":"Develop project",
+      "tasks":[
+         {
+            "id":"22",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"432"
+         },
+         {
+            "id":"23",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"786"
+         },
+         {
+            "id":"24",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - All Notebooks",
+            "seqNumber":"543"
+         },
+         {
+            "id":"25",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
+            "cellName":"Ingest files - Merge Staged Files",
+            "seqNumber":"323"
+         }
+      ]
+   },
+   {
+      "pName":"Evaluate Expression",
+      "tasks":[
+         {
+            "id":"26",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"543"
+         },
+         {
+            "id":"27",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"432"
+         },
+         {
+            "id":"28",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - Merge Staged Files",
+            "seqNumber":"423"
+         },
+         {
+            "id":"29",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - Notebook Contents",
+            "seqNumber":"432"
+         },
+         {
+            "id":"30",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"Merge stg to dbo schema - dim_table",
+            "seqNumber":"423"
+         },
+         {
+            "id":"31",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"Merge stg to dbo schema - dim_table - clone",
+            "seqNumber":"423"
+         }
+      ]
+   },
+   {
+      "pName":"Export to Flat Files",
+      "tasks":[
+         {
+            "id":"32",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"1"
+         },
+         {
+            "id":"33",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"Ingest files - All Notebooks",
+            "seqNumber":"222"
+         }
+      ]
+   },
+   {
+      "pName":"Import Tables",
+      "tasks":[
+         {
+            "id":"34",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"Ingest files - All Notebooks",
+            "seqNumber":"423"
+         }
+      ]
+   },
+   {
+      "pName":"Ingest Notebooks",
+      "tasks":[
+         {
+            "id":"35",
+            "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
+            "cellName":"Ingest files - Notebook Contents",
+            "seqNumber":"400"
+         },
+         {
+            "id":"36",
+            "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
+            "cellName":"Ingest files - Reset staging table",
+            "seqNumber":"100"
+         },
+         {
+            "id":"37",
+            "fileName":"notebook_snap_basics\\content\\ingest_notebook_files.ipynb",
+            "cellName":"Ingest files - Stage Files in Database",
+            "seqNumber":"200"
+         }
+      ]
+   },
+   {
+      "pName":"Kosta_test1",
+      "tasks":[
+         {
+            "id":"38",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup_project.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"2"
+         },
+         {
+            "id":"39",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"Ingest files - Reset staging table",
+            "seqNumber":"42"
+         }
+      ]
+   },
+   {
+      "pName":"Log Clean-up",
+      "tasks":[
+         {
+            "id":"40",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
+            "cellName":"elt framework log delete",
+            "seqNumber":"210"
+         },
+         {
+            "id":"41",
+            "fileName":"notebook_snap_basics\\content\\database_log_cleanup.ipynb",
+            "cellName":"eltsnap log delete",
+            "seqNumber":"210"
+         }
+      ]
+   },
+   {
+      "pName":"Metadata Refresh (AzureSQL)",
+      "tasks":[
+         {
+            "id":"42",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"Ingest files - All Notebooks",
+            "seqNumber":"321"
+         },
+         {
+            "id":"43",
+            "fileName":"notebook_snap_basics\\content\\ingest_ads_notebook_files.ipynb",
+            "cellName":"Ingest files - All Notebooks - clone",
+            "seqNumber":"321"
+         }
+      ]
+   },
+   {
+      "pName":"Metadata Refresh (Snowflake)",
+      "tasks":[
+         {
+            "id":"44",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"dim delete - dbo - dim_column",
+            "seqNumber":"210"
+         },
+         {
+            "id":"45",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"dim delete - dbo - dim_table",
+            "seqNumber":"200"
+         },
+         {
+            "id":"46",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
+            "cellName":"Insert Metadata Server Name (snowflake)",
+            "seqNumber":"100"
+         },
+         {
+            "id":"47",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Merge stg to dbo schema - dim_column",
+            "seqNumber":"190"
+         },
+         {
+            "id":"48",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Merge stg to dbo schema - dim_table",
+            "seqNumber":"180"
+         },
+         {
+            "id":"49",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
+            "cellName":"Merge stg to meta schema - dim_column (snowflake)",
+            "seqNumber":"170"
+         },
+         {
+            "id":"50",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
+            "cellName":"Merge stg to meta schema - dim_table (snowflake)",
+            "seqNumber":"160"
+         },
+         {
+            "id":"51",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_snowflake_project.ipynb",
+            "cellName":"Merge stg to meta schema (snowflake) - dim_database",
+            "seqNumber":"130"
+         },
+         {
+            "id":"52",
+            "fileName":"notebook_snap_basics\\content\\refresh_database_names_snowflake.sql",
+            "cellName":"Refresh Database Names (snowflake)",
+            "seqNumber":"120"
+         },
+         {
+            "id":"53",
+            "fileName":"notebook_snap_basics\\content\\src_to_stg_snowflake_columns.sql",
+            "cellName":"src to stg - Snowflake columns",
+            "seqNumber":"150"
+         },
+         {
+            "id":"54",
+            "fileName":"notebook_snap_basics\\content\\src_to_stg_snowflake_tables.sql",
+            "cellName":"src to stg - snowflake tables",
+            "seqNumber":"140"
+         },
+         {
+            "id":"55",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Truncate STG tables",
+            "seqNumber":"110"
+         }
+      ]
+   },
+   {
+      "pName":"Metadata Refresh v2",
+      "tasks":[
+         {
+            "id":"56",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"dim delete - dbo - dim_column",
+            "seqNumber":"510"
+         },
+         {
+            "id":"57",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"dim delete - dbo - dim_table",
+            "seqNumber":"510"
+         },
+         {
+            "id":"58",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Insert Metadata Server Name",
+            "seqNumber":"110"
+         },
+         {
+            "id":"59",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Merge stg to dbo schema - dim_column",
+            "seqNumber":"420"
+         },
+         {
+            "id":"60",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Merge stg to dbo schema - dim_table",
+            "seqNumber":"420"
+         },
+         {
+            "id":"61",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Merge stg to meta schema - dim_column",
+            "seqNumber":"410"
+         },
+         {
+            "id":"62",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Merge stg to meta schema - dim_database",
+            "seqNumber":"220"
+         },
+         {
+            "id":"63",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Merge stg to meta schema - dim_table",
+            "seqNumber":"410"
+         },
+         {
+            "id":"64",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Refresh Database Names",
+            "seqNumber":"210"
+         },
+         {
+            "id":"65",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"src to stg - SQL Server columns",
+            "seqNumber":"310"
+         },
+         {
+            "id":"66",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"src to stg - SQL Server tables",
+            "seqNumber":"310"
+         },
+         {
+            "id":"67",
+            "fileName":"notebook_snap_basics\\content\\metadata_refresh_for_sql_server_project.ipynb",
+            "cellName":"Truncate STG tables",
+            "seqNumber":"140"
+         }
+      ]
+   }
 ]

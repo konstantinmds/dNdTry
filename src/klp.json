@@ -1,0 +1,30 @@
+[
+  {
+  "label":"Metadata Refresh v2",
+  "value":"Metadata Refresh v2"
+  },
+  {
+  "label":"Metadata Refresh (Snowflake)",
+  "value":"Metadata Refresh (Snowflake)"
+  },
+  {
+  "label":"Metadata Refresh (AzureSQL)",
+  "value":"Metadata Refresh (AzureSQL)"
+  },
+  {
+  "label":"Metadata Refresh (Snowflake)",
+  "value":"Metadata Refresh (Snowflake)"
+  },
+  {
+  "label":"Log Clean-up",
+  "value":"Log Clean-up"
+  },
+  {
+  "label":"Kosta_test1",
+  "value":"Kosta_test1"
+  },
+  {
+  "label":"Ingest Notebooks",
+  "value":"Ingest Notebooks"
+  }
+]

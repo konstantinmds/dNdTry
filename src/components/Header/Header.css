@@ -1,4 +1,8 @@
 .header{
-  position: sticky;
   display: flex; 
+}
+
+.inSelect {
+  width: 60%;
+  max-width: 600px;
 }

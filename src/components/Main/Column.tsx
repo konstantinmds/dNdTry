@@ -9,17 +9,17 @@ import { isHidden } from '../../utils/isHidden'
 import Card from './Card'
 
 interface ColumnProps {
-  text: string
+  listId: string
   index: number
   id: string
   // eslint-disable-next-line react/require-default-props
   isPreview?: boolean
 }
 
-export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
+export const Column = ({ listId, index, id, isPreview }: ColumnProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   // eslint-disable-next-line no-console
-  console.log('kolona', { text, index, id, isPreview })
+  console.log('kolona', { listId, index, id, isPreview })
   const { state, dispatch } = useAppState()
   const ref = useRef<HTMLDivElement>(null)
 
@@ -35,7 +35,7 @@ export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
           return
         }
 
-//        dispatch({ type: 'MOVE_LIST', payload: { dragIndex, hoverIndex } })
+        //        dispatch({ type: 'MOVE_LIST', payload: { dragIndex, hoverIndex } })
 
         // eslint-disable-next-line no-param-reassign
         item.index = hoverIndex
@@ -60,7 +60,7 @@ export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
     },
   })
 
-  const { drag } = useItemDrag({ type: 'COLUMN', id, index, text })
+  const { drag } = useItemDrag({ type: 'COLUMN', id, index, listId })
 
   drag(drop(ref))
 
@@ -68,21 +68,23 @@ export const Column = ({ text, index, id, isPreview }: ColumnProps) => {
     <ColumnContainer
       isPreview={isPreview}
       ref={ref}
-      isHidden={isHidden(isPreview, state.draggedItem, 'Column', id)}
+      isHidden={isHidden(isPreview, state.draggedItem, 'COLUMN', id)}
     >
-      <ColumnTitle>{text}</ColumnTitle>
-      {state.lists[index].tasks.map((task, i) => (
-        <Card
-          key={task.projectName}
-          id={task.id}
-          columnId={id}
-          projectName={task.projectName}
-          seqNumber={task.seqNumber}
-          cellName={task.cellName}
-          index={i}
-          // eslint-disable-next-line react/no-array-index-key
-        />
-      ))}
+      <ColumnTitle>{listId}</ColumnTitle>
+      {state.lists
+        .filter((obj) => obj.listid === listId)[0]
+        .tasks.map((task, i) => (
+          <Card
+            key={task.id}
+            id={task.id}
+            columnId={id}
+            fileName={task.fileName}
+            seqNumber={task.seqNumber}
+            cellName={task.cellName}
+            index={i}
+            // eslint-disable-next-line react/no-array-index-key
+          />
+        ))}
     </ColumnContainer>
   )
 }

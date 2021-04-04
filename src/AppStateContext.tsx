@@ -1,42 +1,20 @@
-import React, { createContext, useContext, useReducer } from 'react'
-import { v4 as uuid } from 'uuid'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { createContext, useContext, useEffect, useReducer } from 'react'
+import { save } from './api'
 import { DragItem } from './features/ddcomp/DragItem'
 import { moveItem } from './features/ddcomp/moveItem'
+import { IAppState, List, Task } from './react-app-env'
 import { findItemIndexById } from './utils/findItemIndexById'
+import { withData } from './withData'
 
-interface Task {
-  id: string
-  cellName: string
-  seqNumber: string
-  projectName: string
-}
-
-interface List {
-  id: string
-  text: string
-  tasks: Task[]
-}
-
-export interface AppState {
-  draggedItem: DragItem | undefined
-  lists: List[]
-}
-
-export const appData: AppState = {
+export const appData: IAppState = {
   lists: [
     {
-      id: '0',
-      text: 'Active Project',
-      tasks: [
-        {
-          id: uuid(),
-          projectName: 'projName',
-          seqNumber: '1',
-          cellName: 'cellName',
-        },
-      ],
+      listid: 'Choosen Project',
+      tasks: [],
     },
-    {
+  ],
+  draggedItem: undefined /*     {
       id: '1',
       text: 'Choosen Project',
       tasks: [
@@ -54,8 +32,27 @@ export const appData: AppState = {
         },
       ],
     },
-  ],
-  draggedItem: undefined,
+ */,
+  /*   lists: [
+    {
+      listid: 'Car Crash Setup',
+      tasks: [
+        {
+          id: '15',
+          fileName:
+            'notebook_snap_basics\\content\\database_log_cleanup_project.ipynb',
+          cellName: 'elt framework log delete',
+          seqNumber: '432',
+        },
+        {
+          id: '16',
+          fileName: 'notebook_snap_basics\\content\\database_log_cleanup.ipynb',
+          cellName: 'eltsnap log delete',
+          seqNumber: '322',
+        },
+      ],
+    }
+ */
 }
 
 type Action =
@@ -88,9 +85,8 @@ type Action =
       }
     }
 
-const appStateReducer = (state: AppState, action: Action): AppState => {
+const appStateReducer = (state: IAppState, action: Action): IAppState => {
   switch (action.type) {
-
     case 'SET_DRAGGED_ITEM': {
       return {
         ...state,
@@ -102,7 +98,7 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
         ...state,
         lists: [
           ...state.lists,
-          { id: uuid() as string, tasks: [], text: action.payload },
+          // { id: uuid() as string, tasks: [], text: action.payload },
         ],
       }
     }
@@ -142,22 +138,31 @@ const appStateReducer = (state: AppState, action: Action): AppState => {
 }
 
 interface AppStateContextProps {
-  state: AppState
+  state: IAppState
   dispatch: any
 }
 
 const AppStateContext = createContext<AppStateContextProps>(
   {} as AppStateContextProps
 )
-export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
-  const [state, dispatch] = useReducer(appStateReducer, appData)
+export const AppStateProvider = withData(
+  ({
+    children,
+    initialState,
+  }: React.PropsWithChildren<{ initialState: IAppState }>) => {
+    const [state, dispatch] = useReducer(appStateReducer, initialState)
 
-  return (
-    <AppStateContext.Provider value={{ state, dispatch }}>
-      {children}
-    </AppStateContext.Provider>
-  )
-}
+    useEffect(() => {
+      save(state)
+    }, [state])
+
+    return (
+      <AppStateContext.Provider value={{ state, dispatch }}>
+        {children}
+      </AppStateContext.Provider>
+    )
+  }
+)
 
 export const useAppState = () => {
   return useContext(AppStateContext)

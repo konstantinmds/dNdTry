@@ -1,14 +1,14 @@
 export type ColumnDragItem = {
   index: number
   id: string
-  text: string
+  listId: string
   type: 'COLUMN'
 }
 
 export type CardDragItem = {
-  cellName
-  seqNumber
-  projectName
+  cellName: string
+  fileName: string
+  seqNumber: string
   index: number
   id: string
   columnId: string

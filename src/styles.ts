@@ -35,17 +35,18 @@ export const ColumnContainer = styled(DragPreviewContainer)`
 
 export const ColumnTitle = styled.div`
 padding: 6px 16px 12px;
-font-weight:bold
+font-weight:bold;
 `
 
 export const CardContainer = styled(DragPreviewContainer)`
 background-color: #fff;
 cursor: pointer;
-margin-bottom: 0.8rem;
+margin-bottom: 1.8rem;
 padding: 0.5rem 2rem;
 max-width: 300px;
 border-radius: 3px;
-box-shadow: #091e4240 0px 1px 0px 0px
+box-shadow: #091e4240 0px 1px 0px 0px;
+text-align: justify;
 `
 
 export const SidebarContainer = styled.div`

@@ -10,15 +10,20 @@ const Main = () => {
     <AppBaseContainer>
       <SidebarContainer />
       <CustomDragLayer />
-      {state.lists.map((list) => (
-        <Column
-          key={list.id}
-          text={list.text}
-          // eslint-disable-next-line radix
-          index={list.id as any}
-          id={list.id}
-        />
-      ))}
+
+      {state.lists === undefined ? (
+        <p>No Data</p>
+      ) : (
+        state.lists.map((list) => (
+          <Column
+            key={list.listid}
+            listId={list.listid}
+            // eslint-disable-next-line radix
+            index={list.listid as any}
+            id={list.listid}
+          />
+        ))
+      )}
     </AppBaseContainer>
   )
 }

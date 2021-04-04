@@ -29,7 +29,7 @@ const styles = {
     justifyItems: 'center',
     alignItems: 'center',
     display: 'grid',
-    height: '100vh',
+    height: '20px',
     borderRadius: '2em',
     color: '#172B4D',
     fontSize: 15,
@@ -41,7 +41,7 @@ const styles = {
   },
   select: {
     width: '40%',
-    'margin-left': 'auto'
+    'marginLeft': 'auto',
   },
   // after z index problem, went here !
   menuPortal: (base) => ({ ...base, zIndex: 9999 }),

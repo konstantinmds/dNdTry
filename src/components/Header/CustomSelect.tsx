@@ -17,13 +17,10 @@ const options = [
   },
 ]
 
-
 const CustomSelect = (props) => {
   return (
     <div>
-      <Select options={options} 
-      menuPortalTarget={document.body} 
-     />
+      <Select options={options} menuPortalTarget={document.body} />
     </div>
   )
 }

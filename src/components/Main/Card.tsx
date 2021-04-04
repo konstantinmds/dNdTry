@@ -11,7 +11,7 @@ import { isHidden } from '../../utils/isHidden'
 interface CardCellProps {
   cellName: string
   seqNumber: string
-  projectName: string
+  fileName: string
   index: number
   id: string
   columnId: string
@@ -22,7 +22,7 @@ interface CardCellProps {
 const Card = ({
   cellName,
   seqNumber,
-  projectName,
+  fileName,
   index,
   id,
   columnId,
@@ -34,7 +34,7 @@ const Card = ({
     type: 'CARD',
     cellName,
     seqNumber,
-    projectName,
+    fileName,
     index,
     id,
     columnId,
@@ -73,15 +73,19 @@ const Card = ({
       isPreview={isPreview}
       ref={ref}
     >
-      <b>Project name</b> <br />
-      {projectName}
-      <hr />
-      <b>Cell name</b> <br />
-      {cellName}
-      <hr />
-      <b>Sequence Number</b> <br />
-      {seqNumber}
-      <hr />
+      <>
+        <b>File name</b> <br />
+        <div style={{ flexShrink: 1 }}>
+          {fileName.split(/\b(?![\s.])/).join('\n')}
+        </div>
+        <hr />
+        <b>Cell name</b> <br />
+        {cellName}
+        <hr />
+        <b>Sequence Number</b> <br />
+        {seqNumber}
+        <hr />
+      </>
     </CardContainer>
   )
 }

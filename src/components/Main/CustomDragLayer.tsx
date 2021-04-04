@@ -38,8 +38,8 @@ const CustomDragLayer: React.FC = () => {
       <div style={getItemStyles(currentOffset)}>
         {item.type === 'COLUMN' ? (
           <Column
-            id={item.id}
-            text={item.text}
+            id={item.llistId}
+            listId={item.listId}
             index={item.index}
             isPreview={true}
           />
@@ -49,7 +49,7 @@ const CustomDragLayer: React.FC = () => {
             index={0}
             id={item.id}
             isPreview={true}
-            projectName={item.projectName}
+            fileName={item.fileName}
             seqNumber={item.seqNumber}
             cellName={item.cellName}
           />

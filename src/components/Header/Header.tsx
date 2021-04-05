@@ -1,28 +1,11 @@
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable no-console */
-import React from 'react'
-import CustomSelect from './CustomSelect'
+import React, { useState } from 'react'
+import Select, { ValueType } from 'react-select'
+import { useAppState } from '../../AppStateContext'
+import { OptionsType, ButtonRed } from '../../styles'
 import './Header.css'
 
-/* 
-import Select, { ValueType } from 'react-select'
-import { OptionsType } from '../../styles'
-
-
-interface IMyProps {
-  data: any
-}
- */
-
-/* const handleClick = (e: ValueType<OptionsType, boolean>) => {
-  if (!e) {
-    return null
-  }
-  console.log(e)
-  return e
-}
- */
-/** @type {{search: React.CSSProperties}} */
 const styles = {
   app: {
     backgroundColor: '#EBECF0',
@@ -41,18 +24,49 @@ const styles = {
   },
   select: {
     width: '40%',
-    'marginLeft': 'auto',
+    marginLeft: 'auto',
   },
   // after z index problem, went here !
   menuPortal: (base) => ({ ...base, zIndex: 9999 }),
 }
 
-const Header: React.FC<any> = (props: any) => {
-  console.log(props)
+const Header: React.FC<any> = () => {
+  const { state, dispatch } = useAppState()
+
+  const [selectedOption, setSelectedOption] = useState<
+    ValueType<OptionsType, boolean>
+  >({ value: '', label: '' } as OptionsType)
+
+  const handleChange = async (e: ValueType<OptionsType, boolean>) => {
+    const valuesFrom = (e as OptionsType).value
+
+    setSelectedOption({
+      value: valuesFrom,
+      label: valuesFrom,
+    })
+
+    dispatch({
+      type: 'CHANGE_PROJECT',
+      payload: { text: valuesFrom, taskId: 'Choose Project' },
+    })
+  }
+
   return (
     <div className="header">
+      <ButtonRed>Import Project Impact Check</ButtonRed>
+      <ButtonRed>Import Project</ButtonRed>
       <div style={styles.select as React.CSSProperties}>
-        <CustomSelect />
+        <Select
+          options={state.dropDownItems as any}
+          value={selectedOption as any}
+          onChange={(e: ValueType<OptionsType, boolean>) =>
+            handleChange(({
+              value: ((e as unknown) as any).value,
+              label: ((e as unknown) as any).label,
+            } as unknown) as any)
+          }
+          menuPortalTarget={document.body}
+        />
       </div>
     </div>
   )

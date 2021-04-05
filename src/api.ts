@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { REACT_APP_BACKEND_ENDPOINT } from './constants'
+import { OptionsType } from './styles'
 import { IAppState } from './react-app-env'
 
 export const save = (payload: IAppState) => {
@@ -12,10 +13,12 @@ export const save = (payload: IAppState) => {
     body: JSON.stringify(payload.lists),
   })
     .then((response) => {
-      console.log(response.json())
       return response.json()
     })
-    .catch((err: Error) => console.log(err.message))
+    .catch((err: Error) => {
+      // eslint-disable-next-line no-console
+      console.log(err.message)
+    })
 }
 
 export const load = (): Promise<IAppState> => {
@@ -23,7 +26,17 @@ export const load = (): Promise<IAppState> => {
     const kuve = `${REACT_APP_BACKEND_ENDPOINT}/load`
     const Response = await fetch(kuve)
     const res = await Response.json()
-    return { ...res, draggedItem: undefined } as Promise<IAppState>
+    Object.entries(res).map((r: any) => (r[1] as any).pName)
+
+    const projectNamesDD = Object.entries(res)
+      .map((r) => (r[1] as any).pName)
+      .map((rl) => ({ value: rl, label: rl } as OptionsType))
+
+    return {
+      ...res,
+      dropDownItems: projectNamesDD,
+      draggedItem: undefined,
+    } as Promise<IAppState>
   })()
 }
 

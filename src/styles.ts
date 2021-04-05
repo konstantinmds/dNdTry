@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import { GroupTypeBase, OptionTypeBase, ValueType } from 'react-select'
 import styled from 'styled-components'
 
 
@@ -15,10 +16,8 @@ opacity: ${props => (props.isHidden ? 0 :1 )};
 
 export const AppBaseContainer = styled.div`
   align-items: flex-start;
-  background-color: #3179ba;
   display: flex;
   flex-direction: row;
-  height: 100%;
   padding: 20px;
   width: 100%;
 `
@@ -31,6 +30,7 @@ export const ColumnContainer = styled(DragPreviewContainer)`
   border-radius: 3px;
   padding: 8px 8px;
   flex-grow: 0;
+  
 `
 
 export const ColumnTitle = styled.div`
@@ -50,7 +50,7 @@ text-align: justify;
 `
 
 export const SidebarContainer = styled.div`
-height: 100%;
+height: 100vh;
 width: 150px;
 margin-right: 20px;
 position: relative;
@@ -72,7 +72,53 @@ width: 100%;
 z-index: 100;
 `
 
+export const PrimaryButton1 = styled.button`
+  background-color: #3f6fbc;
+  border: none;
+  color: white;
+  padding: 7px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 11px;
+  border-radius: 12px 11px;
+  outline: none;
+  border:none
+`
+
+export const Button2 = styled.button`
+  padding: 5px 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: ${({ theme }) => theme.color1};
+  border: 0px;
+  border-radius: 3px;
+  appearance: none;
+  cursor: pointer;
+`;
+
+export const ButtonRed = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0.5em 1em;
+  padding: 0.25em 1em;
+  background: palevioletred;
+  color: white;
+  
+`;
+
+
 export type OptionsType = {
   value: string
   label: string
+}
+
+
+export type SelectProps = ReadonlyArray<OptionTypeBase | GroupTypeBase<any>> & {
+  options: OptionsType,
+  value: ValueType<OptionsType,any>,
+  onChange: any
 }

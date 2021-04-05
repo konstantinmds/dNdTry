@@ -1,26 +1,17 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
-import Select, { ValueType } from 'react-select'
+import Select from 'react-select'
+import { SelectProps } from '../../styles'
 
-const options = [
-  {
-    label: 'Metadata Refresh v2',
-    value: 'Metadata Refresh v2',
-  },
-  {
-    label: 'Metadata Refresh (Snowflake)',
-    value: 'Metadata Refresh (Snowflake)',
-  },
-  {
-    label: 'Metadata Refresh (AzureSQL)',
-    value: 'Metadata Refresh (AzureSQL)',
-  },
-]
-
-const CustomSelect = (props) => {
+const CustomSelect = ({ options, value, onChange }: SelectProps) => {
   return (
     <div>
-      <Select options={options} menuPortalTarget={document.body} />
+      <Select
+        options={options as any}
+        value={value}
+        onChange={onChange}
+        menuPortalTarget={document.body}
+      />
     </div>
   )
 }

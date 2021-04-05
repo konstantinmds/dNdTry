@@ -13,6 +13,7 @@ export const withData = (
     const [error, setError] = useState<Error | undefined>()
     const [initialState, setInitialState] = useState<IAppState>({
       lists: [],
+      dropDownItems: [],
       draggedItem: undefined,
     })
 
@@ -20,7 +21,12 @@ export const withData = (
       const fetchInitialState = async () => {
         try {
           const data = await load()
-          setInitialState({ ...data, draggedItem: undefined } as any)
+
+          setInitialState({
+            ...data,
+            dropDownItems: data.dropDownItems,
+            draggedItem: undefined,
+          } as any)
         } catch (e) {
           setError(e)
         }

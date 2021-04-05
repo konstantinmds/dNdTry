@@ -3,10 +3,10 @@ import Header from './components/Header/Header'
 import Main from './components/Main/Main'
 import './App.css'
 
-const App: React.FC<any> = (data) => {
+const App: React.FC<any> = () => {
   return (
     <div className="app">
-      <Header props={data} />
+      <Header />
       <div className="app__body">
         <Main />
       </div>

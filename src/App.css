@@ -10,3 +10,7 @@
 .app__body {
   display: contents;
 }
+
+body {
+  background-color: #3179ba;
+}

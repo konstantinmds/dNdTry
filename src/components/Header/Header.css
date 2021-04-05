@@ -6,3 +6,7 @@
   width: 60%;
   max-width: 600px;
 }
+
+header button {
+  margin-right: 10px;
+}

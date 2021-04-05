@@ -14,8 +14,8 @@ export interface List {
   tasks: Task[]
 }
 
-
 export interface IAppState {
   draggedItem: DragItem | undefined
+  dropDownItems: string[]
   lists: List[]
 }

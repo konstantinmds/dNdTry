@@ -14,6 +14,7 @@ export const appData: IAppState = {
       tasks: [],
     },
   ],
+  dropDownItems: [],
   draggedItem: undefined /*     {
       id: '1',
       text: 'Choosen Project',
@@ -65,6 +66,10 @@ type Action =
       payload: { text: string; taskId: string }
     }
   | {
+      type: 'CHANGE_PROJECT'
+      payload: { text: string; taskId: string }
+    }
+  | {
       type: 'MOVE_LIST'
       payload: {
         dragIndex: number
@@ -107,6 +112,25 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
 
       return {
         ...state,
+      }
+    }
+    case 'CHANGE_PROJECT': {
+      const { text, taskId } = action.payload
+      const kosta = text
+      const res = Object.entries((state as any).default)
+        .map((ind) => ind[1])
+        .filter((two: any) => two.pName === text)
+
+      const listsSon = res[0] as List
+      return {
+        ...state,
+
+        lists: [
+          {
+            listid: listsSon.listid,
+            tasks: listsSon.tasks,
+          },
+        ],
       }
     }
     case 'MOVE_LIST': {

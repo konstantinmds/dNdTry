@@ -79,11 +79,9 @@ const Card = ({
           {fileName.split(/\b(?![\s.])/).join('\n')}
         </div>
         <hr />
-        <b>Cell name</b> <br />
-        {cellName}
+        <b>Cell name - </b> {cellName}
         <hr />
-        <b>Sequence Number</b> <br />
-        {seqNumber}
+        <b>Sequence Number - </b> {seqNumber}
         <hr />
       </>
     </CardContainer>

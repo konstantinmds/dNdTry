@@ -39,6 +39,19 @@ export const load = (): Promise<IAppState> => {
     } as Promise<IAppState>
   })()
 }
+export const ingestData = (): Promise<IAppState> => {
+  return (async () => {
+    const kuve = `${REACT_APP_BACKEND_ENDPOINT}/addi`
+    const Response = await fetch(kuve)
+    const res = await Response.json()
+
+    return {
+      ...res,
+      dropDownItems: [],
+      draggedItem: undefined,
+    } as Promise<IAppState>
+  })()
+}
 
 /* export const load = () => {
   const kuve = `${REACT_APP_BACKEND_ENDPOINT}/load`

@@ -18,19 +18,24 @@ export const AppBaseContainer = styled.div`
   align-items: flex-start;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 20px;
+  font-family: emoji;
   width: 100%;
+
+
 `
 
 export const ColumnContainer = styled(DragPreviewContainer)`
   background-color: #ebecf0;
-  width: 300px;
+  width: 330px;
   min-height: 40px;
-  margin-right: 20px;
   border-radius: 3px;
   padding: 8px 8px;
-  flex-grow: 0;
-  
+  flex-grow: 0; 
+  margin-right: auto;
+  margin-left: auto;
+
 `
 
 export const ColumnTitle = styled.div`
@@ -43,7 +48,7 @@ background-color: #fff;
 cursor: pointer;
 margin-bottom: 1.8rem;
 padding: 0.5rem 2rem;
-max-width: 300px;
+max-width: 400px;
 border-radius: 3px;
 box-shadow: #091e4240 0px 1px 0px 0px;
 text-align: justify;

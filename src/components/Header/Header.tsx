@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Select, { ValueType } from 'react-select'
 import { useAppState } from '../../AppStateContext'
 import { OptionsType, ButtonRed } from '../../styles'
+import { ingestData } from '../../api'
 import './Header.css'
 
 const styles = {
@@ -37,6 +38,14 @@ const Header: React.FC<any> = () => {
     ValueType<OptionsType, boolean>
   >({ value: '', label: '' } as OptionsType)
 
+  const handleIngest = async () => {
+    const data = await ingestData()
+    dispatch({
+      type: 'ADD_INGESTED',
+      payload: { text: data, taskId: 'Choosen File' },
+    })
+  }
+
   const handleChange = async (e: ValueType<OptionsType, boolean>) => {
     const valuesFrom = (e as OptionsType).value
 
@@ -53,7 +62,9 @@ const Header: React.FC<any> = () => {
 
   return (
     <div className="header">
-      <ButtonRed>Import Project Impact Check</ButtonRed>
+      <ButtonRed onClick={() => handleIngest()}>
+        Import Project Impact Check
+      </ButtonRed>
       <ButtonRed>Import Project</ButtonRed>
       <div style={styles.select as React.CSSProperties}>
         <Select

@@ -70,6 +70,10 @@ type Action =
       payload: { text: string; taskId: string }
     }
   | {
+      type: 'ADD_INGESTED'
+      payload: { text: List; taskId: string }
+    }
+  | {
       type: 'MOVE_LIST'
       payload: {
         dragIndex: number
@@ -116,21 +120,41 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
     }
     case 'CHANGE_PROJECT': {
       const { text, taskId } = action.payload
-      const kosta = text
       const res = Object.entries((state as any).default)
         .map((ind) => ind[1])
         .filter((two: any) => two.pName === text)
 
-      const listsSon = res[0] as List
+      const listsSon = {
+        listid: (res[0] as any).pName,
+        tasks: (res[0] as List).tasks,
+      } as List
+      const mongo = state.lists?.filter((m) =>
+        m.listid.includes('Choosen File')
+      )
+      if (mongo && mongo.length > 0) {
+        
+
+        return {
+          ...state,
+
+          lists: [...mongo, listsSon],
+        }
+      }
+
       return {
         ...state,
 
-        lists: [
-          {
-            listid: listsSon.listid,
-            tasks: listsSon.tasks,
-          },
-        ],
+        lists: [listsSon],
+      }
+    }
+    case 'ADD_INGESTED': {
+      const { text, taskId } = action.payload
+      const res = Object.entries((state as any).default).map((ind) => ind[1])
+      const memic = text.tasks
+
+      return {
+        ...state,
+        lists: [...state.lists, { listid: taskId as string, tasks: memic }],
       }
     }
     case 'MOVE_LIST': {

@@ -1,17 +1,15 @@
 .app {
   display: contents;
+  background-color: #3179ba;
+  zoom : "75%"
+
 }
 
 .header {
   display: flex;
+  
 }
-
 
 .app__body {
   display: contents;
-}
-
-body {
-  background-color: #3179ba;
-  zoom : "75%"
 }

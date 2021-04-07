@@ -44,6 +44,7 @@ export const Column = ({ listId, index, id, isPreview }: ColumnProps) => {
         const hoverIndex = 0
         const sourceColumn = item.columnId
         const targetColumn = id
+        /* const mongo = {} */
 
         if (sourceColumn === targetColumn) {
           return

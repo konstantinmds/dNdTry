@@ -128,12 +128,8 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
         listid: (res[0] as any).pName,
         tasks: (res[0] as List).tasks,
       } as List
-      const mongo = state.lists?.filter((m) =>
-        m.listid.includes('Choosen File')
-      )
+      const mongo = state.lists?.filter((m) => m.listid.includes('Code Cells'))
       if (mongo && mongo.length > 0) {
-        
-
         return {
           ...state,
 
@@ -154,7 +150,7 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
 
       return {
         ...state,
-        lists: [...state.lists, { listid: taskId as string, tasks: memic }],
+        lists: [{ listid: taskId as string, tasks: memic }, ...state.lists],
       }
     }
     case 'MOVE_LIST': {
@@ -175,9 +171,14 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
       const sourceLaneIndex = findItemIndexById(state.lists, sourceColumn)
       const targetLaneIndex = findItemIndexById(state.lists, targetColumn)
 
+/*       //const mongo = state.lists?.filter((m) => m.listid.includes('Code Cells'))
+      //const clonedMongo = JSON.parse(JSON.stringify(mongo))
+ */
       const item = state.lists[sourceLaneIndex].tasks.splice(dragIndex, 1)[0]
       state.lists[targetLaneIndex].tasks.splice(hoverIndex, 0, item)
-      return { ...state }
+      return {
+        ...state,
+      }
     }
     default: {
       return state

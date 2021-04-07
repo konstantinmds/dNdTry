@@ -22,6 +22,7 @@ export const AppBaseContainer = styled.div`
   padding: 20px;
   font-family: emoji;
   width: 100%;
+  background-color: #3179ba;
 
 
 `

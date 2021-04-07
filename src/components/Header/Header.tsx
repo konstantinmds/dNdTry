@@ -42,7 +42,7 @@ const Header: React.FC<any> = () => {
     const data = await ingestData()
     dispatch({
       type: 'ADD_INGESTED',
-      payload: { text: data, taskId: 'Choosen File' },
+      payload: { text: data, taskId: 'Code Cells' },
     })
   }
 

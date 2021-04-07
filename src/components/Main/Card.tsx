@@ -52,10 +52,13 @@ const Card = ({
         const hoverIndex = index
         const sourceColumn = item.columnId
         const targetColumn = columnId
+        const mongo = state.lists?.filter((m) =>
+          m.listid.includes('Code Cells')
+        )
 
         dispatch({
           type: 'MOVE_TASK',
-          payload: { dragIndex, hoverIndex, sourceColumn, targetColumn },
+          payload: { dragIndex, hoverIndex, sourceColumn, targetColumn, mongo },
         })
         // eslint-disable-next-line no-param-reassign
         item.index = hoverIndex

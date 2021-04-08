@@ -1,6 +1,5 @@
 .app {
   display: contents;
-  background-color: #3179ba;
   zoom : "75%"
 
 }
@@ -12,4 +11,10 @@
 
 .app__body {
   display: contents;
+}
+
+
+body {
+  background-color: #3179ba;
+
 }

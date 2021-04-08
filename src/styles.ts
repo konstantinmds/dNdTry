@@ -8,11 +8,29 @@ interface DragPreviewContainerProps {
   isPreview?: boolean
 }
 
+interface HeButt {
+  shouldHover?: boolean
+}
+
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
 
 transform: ${props => (props.isPreview ? "rotate(5deg)" : undefined )};
 opacity: ${props => (props.isHidden ? 0 :1 )};
 `
+
+export const TheButt = styled.div<HeButt>`
+color: ${props => (props.shouldHover ? 'red' : 'grey')}
+
+`
+
+export const Bit = styled(TheButt)`
+height: 17px;
+width: 20px;
+border-radius: 20px 20px 20px 20px;
+margin-left: auto;
+`
+
+
 
 export const AppBaseContainer = styled.div`
   align-items: flex-start;

@@ -1,11 +1,12 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import HighlightOffIcon from '@material-ui/icons/HighlightOff'
 import { useDrop } from 'react-dnd'
 import { useAppState } from '../../AppStateContext'
-import { CardDragItem, DragItem } from '../../features/ddcomp/DragItem'
+import { DragItem } from '../../features/ddcomp/DragItem'
 import { useItemDrag } from '../../features/ddcomp/useItemDrag'
-import { CardContainer } from '../../styles'
+import { Bit, CardContainer } from '../../styles'
 import { isHidden } from '../../utils/isHidden'
 
 interface CardCellProps {
@@ -16,6 +17,7 @@ interface CardCellProps {
   id: string
   columnId: string
   isPreview?: boolean
+  shouldHover?: boolean
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -27,8 +29,10 @@ const Card = ({
   id,
   columnId,
   isPreview,
+  shouldHover,
 }: CardCellProps) => {
   const { state, dispatch } = useAppState()
+  const [isHoovered, setIsHoovered] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   const { drag } = useItemDrag({
     type: 'CARD',
@@ -77,6 +81,17 @@ const Card = ({
       ref={ref}
     >
       <>
+        <Bit
+          shouldHover={isHoovered}
+          onMouseEnter={() => setIsHoovered(true)}
+          onMouseLeave={() => setIsHoovered(false)}
+        >
+          <HighlightOffIcon
+            onClick={() => {
+              alert('✔️ This works on every component!')
+            }}
+          />
+        </Bit>
         <b>File name</b> <br />
         <div style={{ flexShrink: 1 }}>
           {fileName.split(/\b(?![\s.])/).join('\n')}

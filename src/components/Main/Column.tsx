@@ -69,11 +69,11 @@ export const Column = ({ listId, index, id, isPreview }: ColumnProps) => {
     <ColumnContainer
       isPreview={isPreview}
       ref={ref}
-      isHidden={isHidden(isPreview, state.draggedItem, 'COLUMN', id)}
+      isHidden={isHidden(true, state.draggedItem, 'COLUMN', id)}
     >
       <ColumnTitle>{listId}</ColumnTitle>
       {state.lists
-        .filter((obj) => obj.listid === listId)[0]
+        .filter((obj) => obj.listId === listId)[0]
         .tasks.map((task, i) => (
           <Card
             key={task.id}

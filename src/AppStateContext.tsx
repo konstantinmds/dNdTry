@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+import { TwoWheelerSharp } from '@material-ui/icons'
 import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import { save } from './api'
 import { DragItem } from './features/ddcomp/DragItem'
@@ -10,11 +11,12 @@ import { withData } from './withData'
 export const appData: IAppState = {
   lists: [
     {
-      listid: 'Choosen Project',
+      listId: 'Choosen Project',
       tasks: [],
     },
   ],
   dropDownItems: [],
+  sourceIngested: null,
   draggedItem: undefined /*     {
       id: '1',
       text: 'Choosen Project',
@@ -70,6 +72,10 @@ type Action =
       payload: { text: string; taskId: string }
     }
   | {
+      type: 'DELETE_TASK'
+      payload: { columnId: string; taskId: string; index: string }
+    }
+  | {
       type: 'ADD_INGESTED'
       payload: { text: List; taskId: string }
     }
@@ -118,17 +124,39 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
         ...state,
       }
     }
+    case 'DELETE_TASK': {
+      const { columnId, taskId, index } = action.payload
+      const theIlist = state.lists.find((r: any) => r.listId === columnId)
+
+      if (theIlist) {
+        // eslint-disable-next-line radix
+        theIlist.tasks.splice(parseInt(index), 1)
+      }
+      return {
+        ...state,
+      }
+    }
     case 'CHANGE_PROJECT': {
       const { text, taskId } = action.payload
+
+      /*       
+        orig bilo-->> sada mijenjamo prema -->
       const res = Object.entries((state as any).default)
         .map((ind) => ind[1])
         .filter((two: any) => two.pName === text)
+ */
+      const res = Object.entries((state as any).default.lists)
+        .map((ind) => ind[1])
+        .filter((two: any) => two.listId === text)
 
       const listsSon = {
-        listid: (res[0] as any).pName,
+        listId: (res[0] as any).listId,
         tasks: (res[0] as List).tasks,
       } as List
-      const mongo = state.lists?.filter((m) => m.listid.includes('Code Cells'))
+ 
+      const mongo = state.lists?.filter((m) =>
+        (m as any).listId.includes('Code Cells')
+      )
       if (mongo && mongo.length > 0) {
         return {
           ...state,
@@ -145,12 +173,13 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
     }
     case 'ADD_INGESTED': {
       const { text, taskId } = action.payload
-      const res = Object.entries((state as any).default).map((ind) => ind[1])
+      /*      const res = Object.entries((state as any).default).map((ind) => ind[1]) */
       const memic = text.tasks
 
       return {
         ...state,
-        lists: [{ listid: taskId as string, tasks: memic }, ...state.lists],
+        sourceIngested: { listId: taskId, tasks: memic } as List,
+        lists: [{ listId: taskId as string, tasks: memic }, ...state.lists],
       }
     }
     case 'MOVE_LIST': {
@@ -171,7 +200,7 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
       const sourceLaneIndex = findItemIndexById(state.lists, sourceColumn)
       const targetLaneIndex = findItemIndexById(state.lists, targetColumn)
 
-/*       //const mongo = state.lists?.filter((m) => m.listid.includes('Code Cells'))
+      /*       //const mongo = state.lists?.filter((m) => m.listid.includes('Code Cells'))
       //const clonedMongo = JSON.parse(JSON.stringify(mongo))
  */
       const item = state.lists[sourceLaneIndex].tasks.splice(dragIndex, 1)[0]
@@ -200,10 +229,6 @@ export const AppStateProvider = withData(
     initialState,
   }: React.PropsWithChildren<{ initialState: IAppState }>) => {
     const [state, dispatch] = useReducer(appStateReducer, initialState)
-
-    useEffect(() => {
-      save(state)
-    }, [state])
 
     return (
       <AppStateContext.Provider value={{ state, dispatch }}>

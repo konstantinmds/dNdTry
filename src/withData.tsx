@@ -15,6 +15,7 @@ export const withData = (
       lists: [],
       dropDownItems: [],
       draggedItem: undefined,
+      sourceIngested: null,
     })
 
     useEffect(() => {

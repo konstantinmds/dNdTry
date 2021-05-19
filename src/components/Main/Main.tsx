@@ -16,11 +16,11 @@ const Main = () => {
       ) : (
         state.lists.map((list) => (
           <Column
-            key={list.listid}
-            listId={list.listid}
+            key={list.listId}
+            listId={list.listId}
             // eslint-disable-next-line radix
-            index={list.listid as any}
-            id={list.listid}
+            index={list.listId as any}
+            id={list.listId}
           />
         ))
       )}

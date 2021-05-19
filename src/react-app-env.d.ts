@@ -1,7 +1,6 @@
 /* eslint-disable spaced-comment */
 /// <reference types="react-scripts" />
 
-
 export interface Task {
   id: string
   cellName: string
@@ -10,7 +9,7 @@ export interface Task {
 }
 
 export interface List {
-  listid: string
+  listId: string
   tasks: Task[]
 }
 
@@ -18,4 +17,5 @@ export interface IAppState {
   draggedItem: DragItem | undefined
   dropDownItems: string[]
   lists: List[]
+  sourceIngested: List | null
 }

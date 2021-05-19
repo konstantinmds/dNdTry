@@ -57,7 +57,7 @@ const Card = ({
         const sourceColumn = item.columnId
         const targetColumn = columnId
         const mongo = state.lists?.filter((m) =>
-          m.listid.includes('Code Cells')
+          m.listId.includes('Code Cells')
         )
 
         dispatch({
@@ -72,11 +72,18 @@ const Card = ({
     },
   })
 
+  const deleteCard = () => {
+    dispatch({
+      type: 'DELETE_TASK',
+      payload: { columnId, id, index },
+    })
+  }
+
   drag(drop(ref))
 
   return (
     <CardContainer
-      isHidden={isHidden(isPreview, state.draggedItem, 'CARD', id)}
+      isHidden={isHidden(true, state.draggedItem, 'CARD', id)}
       isPreview={isPreview}
       ref={ref}
     >
@@ -88,7 +95,7 @@ const Card = ({
         >
           <HighlightOffIcon
             onClick={() => {
-              alert('✔️ This works on every component!')
+              deleteCard()
             }}
           />
         </Bit>

@@ -26,12 +26,15 @@ export const load = (): Promise<IAppState> => {
     const kuve = `${REACT_APP_BACKEND_ENDPOINT}/load`
     const Response = await fetch(kuve)
     const res = await Response.json()
-    Object.entries(res).map((r: any) => (r[1] as any).pName)
 
-    const projectNamesDD = Object.entries(res)
+/*
+orig promijenicemo zbog date na   
+  const projectNamesDD = Object.entries(res)
       .map((r) => (r[1] as any).pName)
       .map((rl) => ({ value: rl, label: rl } as OptionsType))
+ */
 
+    const projectNamesDD = res.dropDownItems
     return {
       ...res,
       dropDownItems: projectNamesDD,
@@ -44,12 +47,18 @@ export const ingestData = (): Promise<IAppState> => {
     const kuve = `${REACT_APP_BACKEND_ENDPOINT}/addi`
     const Response = await fetch(kuve)
     const res = await Response.json()
+    const clonedMongo = JSON.parse(
+      JSON.stringify({ listId: (res as any).pName, tasks: (res as any).tasks })
+    )
 
-    return {
+    const ere = {
       ...res,
       dropDownItems: [],
       draggedItem: undefined,
+      sourceIngested: clonedMongo,
     } as Promise<IAppState>
+
+    return ere
   })()
 }
 

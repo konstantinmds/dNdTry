@@ -140,7 +140,7 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
       const { text, taskId } = action.payload
 
       /*       
-        orig bilo-->> sada mijenjamo prema -->
+        orig bilo-->> sada mijenjamo prema 
       const res = Object.entries((state as any).default)
         .map((ind) => ind[1])
         .filter((two: any) => two.pName === text)

@@ -1,12 +1,15 @@
 import React from 'react'
-import "./Sidebar.css"
+import { FileExplorer } from './FileExplorer'
+import './Sidebar.css'
 
-const Sidebar = () => {
+interface SidebrProps {
+  navLists: any
+}
+
+const Sidebar = (navLists: SidebrProps) => {
   return (
     <div className="sidebar">
-      <p>lds</p>
-      <p>dsdp</p>
-      <p>lds</p>
+      <FileExplorer navLists={navLists} />
     </div>
   )
 }

@@ -1,8 +1,8 @@
 .sidebar {
   position: relative;
   top: 100px;
-  padding-right: 20px;
-  flex: 0.2;
+  padding-right: 40px;
+  flex: 0.3;
   border-style: solid;
   text-align: center;
   height: auto;

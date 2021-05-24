@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAppState } from '../../AppStateContext'
 import { AppBaseContainer, SidebarContainer } from '../../styles'
+import Sidebar from '../Sidebar/Sidebar'
 import { Column } from './Column'
 import CustomDragLayer from './CustomDragLayer'
 
@@ -8,7 +9,9 @@ const Main = () => {
   const { state } = useAppState()
   return (
     <AppBaseContainer>
-      <SidebarContainer />
+      <SidebarContainer>
+        <Sidebar navLists={state.sourceIngested} />
+      </SidebarContainer>
       <CustomDragLayer />
 
       {state.lists === undefined ? (

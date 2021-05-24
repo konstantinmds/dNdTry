@@ -38,6 +38,7 @@ orig promijenicemo zbog date na
     return {
       ...res,
       dropDownItems: projectNamesDD,
+      sourceIngested: res.navLists,
       draggedItem: undefined,
     } as Promise<IAppState>
   })()

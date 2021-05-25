@@ -16,17 +16,34 @@ export const Tree = (props: TreeProps) => {
   const [nodes, setNodes] = useState(props.state)
   const getRootNodes = () => {
     // eslint-disable-next-line react/prop-types
+    let klet
+    if (nodes.nodes) {
+      klet = values(nodes.nodes)
+    } else {
+      klet = values(nodes)
+    }
 
-    const klet = values(nodes)
     const milyang = klet.flat().filter((node) => node.fileName !== undefined)
     return milyang
   }
 
   const onToggle = (node) => {
     // const { nodes } = state;
-    const fili = nodes.navLists.filter((r) => node.fileName === r.fileName)[0]
+    let kli
+    if (nodes.nodes) {
+      kli = nodes.nodes
+    } else {
+      kli = nodes
+    }
+    const fili = kli.navLists.filter((r) => node.fileName === r.fileName)[0]
     fili.isOpen = !node.isOpen
-    setNodes({ nodes })
+    if (fili.isOpen) {
+      fili.type = 'cell'
+    } else {
+      fili.type = 'file'
+    }
+
+    setNodes({ nodes: kli })
   }
 
   const onNodeSelect = () => {
@@ -35,8 +52,8 @@ export const Tree = (props: TreeProps) => {
 
   const getChildNodes = (node) => {
     // eslint-disable-next-line react/prop-types
-    if (!node.children) return []
-    return node.children.map((path) => nodes[path])
+    if (!node.tasks) return []
+    return node.tasks.map((path) => path.cellName)
   }
 
   const rootNodes = getRootNodes()

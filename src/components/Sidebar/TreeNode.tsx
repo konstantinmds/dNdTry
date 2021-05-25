@@ -41,14 +41,30 @@ const NodeIcon = styled.div<NodeIconProps>`
   margin-right: ${(props) => (props.marginRight ? props.marginRight : 5)}px;
 `
 
-const getNodeLabel = (node): any => last(node.fileName.split('/'))
+const getNodeLabel = (node): any => {
+  if (typeof node === 'string') {
+    return node
+  }
+
+  const fit = node.fileName.split('\\')
+  return last(fit)
+}
 
 const TreeNode = (props) => {
   const { node, getChildNodes, level, onToggle, onNodeSelect } = props
 
+  const getType = () => {
+    if (typeof node === 'string') {
+      return 'cell'
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+    node.fileName !== undefined ? (node.type = 'file') : (node.type = 'cell')
+    return node.type
+  }
+
   return (
     <React.Fragment>
-      <StyledTreeNode level={level} type={node.type}>
+      <StyledTreeNode level={level} type={getType()}>
         <NodeIcon marginRight={10} onClick={() => onToggle(node)}>
           {node.type === 'file' &&
             (node.isOpen ? <FaChevronDown /> : <FaChevronRight />)}

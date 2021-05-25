@@ -153,7 +153,7 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
         listId: (res[0] as any).listId,
         tasks: (res[0] as List).tasks,
       } as List
- 
+
       const mongo = state.lists?.filter((m) =>
         (m as any).listId.includes('Code Cells')
       )

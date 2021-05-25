@@ -8,7 +8,7 @@ interface SidebrProps {
 
 const Sidebar = (navLists: SidebrProps) => {
   return (
-    <div className="sidebar">
+    <div>
       <FileExplorer navLists={navLists} />
     </div>
   )

@@ -75,7 +75,7 @@ text-align: justify;
 
 export const SidebarContainer = styled.div`
 height: 100vh;
-width: 150px;
+width: 450px;
 margin-right: 20px;
 position: relative;
 z-index: 1;

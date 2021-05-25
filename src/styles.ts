@@ -40,10 +40,8 @@ export const AppBaseContainer = styled.div`
   padding: 20px;
   font-family: emoji;
   width: 100%;
-  background-color: #3179ba;
-
-
-`
+  background-color: #fffffe;
+  `
 
 export const ColumnContainer = styled(DragPreviewContainer)`
   background-color: #ebecf0;
@@ -84,6 +82,7 @@ left:0;
 overflow-x: hidden;
 padding-top:20px;
 border-style: solid;
+background-color: #f3f3f3;
 `
 
 export const CustomDragLayerContainer = styled.div`
@@ -97,7 +96,7 @@ z-index: 100;
 `
 
 export const PrimaryButton1 = styled.button`
-  background-color: #3f6fbc;
+  background-color: #0078d4;
   border: none;
   color: white;
   padding: 7px 4px;
@@ -125,11 +124,11 @@ export const Button2 = styled.button`
 export const ButtonRed = styled.button`
   background: transparent;
   border-radius: 3px;
-  border: 2px solid palevioletred;
+  border: 2px solid  #c0def3;
   color: palevioletred;
   margin: 0.5em 1em;
   padding: 0.25em 1em;
-  background: palevioletred;
+  background-color: #0078d4;
   color: white;
   
 `;

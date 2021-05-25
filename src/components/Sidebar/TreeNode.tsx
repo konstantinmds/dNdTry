@@ -30,10 +30,15 @@ interface NodeIconProps {
 
 const StyledTreeNode = styled.div<StyledTreeNodeProps>`
   display: flex;
+  width: 300%;
   flex-direction: row;
   align-items: center;
   padding: 5px 8px;
+  cursor: pointer;
   padding-left: ${(props) => getPaddingLeft(props.level, props.type)}px;
+  &:hover {
+    background: lightgray;
+  }
 `
 
 const NodeIcon = styled.div<NodeIconProps>`
@@ -51,7 +56,7 @@ const getNodeLabel = (node): any => {
 }
 
 const TreeNode = (props) => {
-  const { node, getChildNodes, level, onToggle, onNodeSelect } = props
+  const { node, getChildNodes, level, onToggle, onNodeSelect, father } = props
 
   const getType = () => {
     if (typeof node === 'string') {
@@ -76,14 +81,14 @@ const TreeNode = (props) => {
           {node.type === 'file' && !node.isOpen && <FaFolder />}
         </NodeIcon>
 
-        <span role="button" onClick={() => onNodeSelect(node)}>
+        <span role="button" onClick={() => onNodeSelect(node, father)}>
           {getNodeLabel(node)}
         </span>
       </StyledTreeNode>
 
       {node.isOpen &&
         getChildNodes(node).map((childNode) => (
-          <TreeNode {...props} node={childNode} level={level + 1} />
+          <TreeNode {...props} node={childNode} level={level + 1} father={node} />
         ))}
     </React.Fragment>
   )

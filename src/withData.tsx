@@ -16,6 +16,7 @@ export const withData = (
       dropDownItems: [],
       draggedItem: undefined,
       sourceIngested: null,
+      selectedOption: null,
     })
 
     useEffect(() => {
@@ -27,6 +28,7 @@ export const withData = (
             ...data,
             dropDownItems: data.dropDownItems,
             draggedItem: undefined,
+            selectedOption: null,
           } as any)
         } catch (e) {
           setError(e)

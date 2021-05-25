@@ -6,7 +6,7 @@ import TreeNode from './TreeNode'
 
 interface TreeProps {
   state: any
-  onSelect: (file: any) => void
+  onSelect: (file: any, father: any) => void
 }
 
 // eslint-disable-next-line react/prop-types
@@ -46,8 +46,8 @@ export const Tree = (props: TreeProps) => {
     setNodes({ nodes: kli })
   }
 
-  const onNodeSelect = () => {
-    onSelect(nodes)
+  const onNodeSelect = (node, father) => {
+    onSelect(node, father)
   }
 
   const getChildNodes = (node) => {
@@ -66,6 +66,7 @@ export const Tree = (props: TreeProps) => {
           getChildNodes={getChildNodes}
           onToggle={onToggle}
           onNodeSelect={onNodeSelect}
+          father={null}
         />
       ))}
     </div>

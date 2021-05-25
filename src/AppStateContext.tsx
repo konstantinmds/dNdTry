@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { TwoWheelerSharp } from '@material-ui/icons'
+import { uniqueId } from 'lodash'
 import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import { save } from './api'
 import { DragItem } from './features/ddcomp/DragItem'
@@ -17,7 +19,9 @@ export const appData: IAppState = {
   ],
   dropDownItems: [],
   sourceIngested: null,
-  draggedItem: undefined /*     {
+  draggedItem: undefined,
+  selectedOption: null,
+  /*     {
       id: '1',
       text: 'Choosen Project',
       tasks: [
@@ -35,7 +39,7 @@ export const appData: IAppState = {
         },
       ],
     },
- */,
+ */
   /*   lists: [
     {
       listid: 'Car Crash Setup',
@@ -91,6 +95,13 @@ type Action =
       payload: DragItem | undefined
     }
   | {
+      type: 'ADD_CELL_FROM_SIDEBAR'
+      payload: {
+        cell_name: string
+        file_name: string
+      }
+    }
+  | {
       type: 'MOVE_TASK'
       payload: {
         dragIndex: number
@@ -119,6 +130,25 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
     }
     case 'ADD_TASK': {
       // logic
+
+      return {
+        ...state,
+      }
+    }
+    case 'ADD_CELL_FROM_SIDEBAR': {
+      const { cell_name, file_name } = action.payload
+      if (!state.selectedOption || state.selectedOption.value === '') {
+        return {
+          ...state,
+        }
+      }
+
+      const fit = state.lists[0].tasks.push({
+        cellName: cell_name,
+        fileName: file_name,
+        seqNumber: '0',
+        id: uniqueId(),
+      })
 
       return {
         ...state,

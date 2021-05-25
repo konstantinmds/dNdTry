@@ -18,4 +18,5 @@ export interface IAppState {
   dropDownItems: string[]
   lists: List[]
   sourceIngested: List | null
+  selectedOption: any
 }

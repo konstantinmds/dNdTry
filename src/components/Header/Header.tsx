@@ -54,6 +54,11 @@ const Header: React.FC<any> = () => {
       label: valuesFrom,
     })
 
+    state.selectedOption = {
+      value: valuesFrom,
+      label: valuesFrom,
+    }
+
     dispatch({
       type: 'CHANGE_PROJECT',
       payload: { text: valuesFrom, taskId: 'Choose Project' },

@@ -14,6 +14,7 @@ export interface List {
 }
 
 export interface IAppState {
+  default: any,
   draggedItem: DragItem | undefined
   dropDownItems: string[]
   lists: List[]

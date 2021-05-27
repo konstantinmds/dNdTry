@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useAppState } from '../../AppStateContext'
+import { List } from '../../react-app-env'
 import { Tree } from './Tree'
 
 const StyledFileExplorer = styled.div`
@@ -35,18 +36,20 @@ export const FileExplorer = (props: { navLists: FileExplorerProps }): any => {
     const g = father ? father.fileName : file.fileName
     setSelectedFile(g)
 
-    if (father) {
+    if (g) {
+      const fileClean: List = { listId: file.fileName, tasks: file.tasks }
+      dispatch({
+        type: 'ADD_FILE_FROM_SIDEBAR',
+        payload: { file: fileClean },
+      })
+    }
+
+    /*     if (father) {
       dispatch({
         type: 'ADD_CELL_FROM_SIDEBAR',
         payload: { file_name: g, cell_name: file },
       })
-    } else {
-      dispatch({
-        type: 'ADD_FILE_FROM_SIDEBAR',
-        payload: { file_name: g, cell_name: file },
-      })
-
-    }
+    } else { */
   }
 
   return (

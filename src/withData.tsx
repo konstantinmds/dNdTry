@@ -14,6 +14,7 @@ export const withData = (
     const [initialState, setInitialState] = useState<IAppState>({
       lists: [],
       dropDownItems: [],
+      default: {},
       draggedItem: undefined,
       sourceIngested: null,
       selectedOption: null,

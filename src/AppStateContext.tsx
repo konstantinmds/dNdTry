@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { TwoWheelerSharp } from '@material-ui/icons'
-import { uniqueId } from 'lodash'
+import { last, uniqueId } from 'lodash'
 import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import { save } from './api'
 import { DragItem } from './features/ddcomp/DragItem'
@@ -21,6 +21,7 @@ export const appData: IAppState = {
   sourceIngested: null,
   draggedItem: undefined,
   selectedOption: null,
+  default: {},
   /*     {
       id: '1',
       text: 'Choosen Project',
@@ -102,6 +103,12 @@ type Action =
       }
     }
   | {
+      type: 'ADD_FILE_FROM_SIDEBAR'
+      payload: {
+        file: List
+      }
+    }
+  | {
       type: 'MOVE_TASK'
       payload: {
         dragIndex: number
@@ -135,6 +142,39 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
         ...state,
       }
     }
+    case 'ADD_FILE_FROM_SIDEBAR': {
+      const { file } = action.payload
+
+      const name = last(file.listId.split('\\')) || ''
+      const n = last(state.lists[0].listId.split('.'))
+
+      if (n === 'ipynb' || n === 'sql') {
+        if (state.lists[0].listId === name) {
+          const st0 = state.default.navLists.filter(
+            (r) => r.fileName === file.listId
+          )
+
+          Object.assign(state.lists[0].tasks, st0[0].tasks)
+          return {
+            ...state,
+          }
+        }
+        // Object.assign(state.lists[0], { listId: name, tasks: file.tasks })
+
+        Object.assign([], state.lists, {
+          0: { listId: name, tasks: file.tasks }
+        })
+
+        return {
+          ...state,
+        }
+      }
+
+      return {
+        ...state,
+        lists: [{ listId: name, tasks: file.tasks }, ...state.lists],
+      }
+    }
     case 'ADD_CELL_FROM_SIDEBAR': {
       const { cell_name, file_name } = action.payload
       if (!state.selectedOption || state.selectedOption.value === '') {
@@ -154,6 +194,7 @@ const appStateReducer = (state: IAppState, action: Action): IAppState => {
         ...state,
       }
     }
+
     case 'DELETE_TASK': {
       const { columnId, taskId, index } = action.payload
       const theIlist = state.lists.find((r: any) => r.listId === columnId)

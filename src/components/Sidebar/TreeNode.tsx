@@ -11,6 +11,8 @@ import {
   FaChevronDown,
   FaFolderOpen,
 } from 'react-icons/fa'
+
+import { AiOutlineArrowRight } from 'react-icons/ai'
 import styled from 'styled-components'
 
 const getPaddingLeft = (level, type) => {
@@ -34,11 +36,21 @@ const StyledTreeNode = styled.div<StyledTreeNodeProps>`
   flex-direction: row;
   align-items: center;
   padding: 5px 8px;
-  cursor: pointer;
   padding-left: ${(props) => getPaddingLeft(props.level, props.type)}px;
   &:hover {
     background: lightgray;
   }
+`
+
+const Woneri = styled.div`
+  display: flex;
+  kerning: 0ch;
+`
+
+const Wiwi = styled.div`
+  display: flex;
+  cursor: pointer;
+  padding-left: 15px;
 `
 
 const NodeIcon = styled.div<NodeIconProps>`
@@ -81,14 +93,22 @@ const TreeNode = (props) => {
           {node.type === 'file' && !node.isOpen && <FaFolder />}
         </NodeIcon>
 
-        <span role="button" onClick={() => onNodeSelect(node, father)}>
+        <Woneri>
           {getNodeLabel(node)}
-        </span>
+          <Wiwi role="button" onClick={() => onNodeSelect(node, father)}>
+            {node.type === 'file' && <AiOutlineArrowRight />}
+          </Wiwi>
+        </Woneri>
       </StyledTreeNode>
 
       {node.isOpen &&
         getChildNodes(node).map((childNode) => (
-          <TreeNode {...props} node={childNode} level={level + 1} father={node} />
+          <TreeNode
+            {...props}
+            node={childNode}
+            level={level + 1}
+            father={node}
+          />
         ))}
     </React.Fragment>
   )

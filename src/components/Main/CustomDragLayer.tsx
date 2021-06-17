@@ -23,10 +23,11 @@ function getItemStyles(currentOffset: XYCoord | null): React.CSSProperties {
 }
 
 const CustomDragLayer: React.FC = () => {
-  const { isDragging, item, currentOffset } = useDragLayer((monitor) => ({
+  const { isDragging, item, currentOffset,  } = useDragLayer((monitor) => ({
     item: monitor.getItem(),
     currentOffset: monitor.getSourceClientOffset(),
     isDragging: monitor.isDragging(),
+
   }))
 
   if (!isDragging) {
@@ -46,7 +47,7 @@ const CustomDragLayer: React.FC = () => {
         ) : (
           <Card
             columnId={item.columnId}
-            index={0}
+            index={item.index}
             id={item.id}
             isPreview={true}
             fileName={item.fileName}

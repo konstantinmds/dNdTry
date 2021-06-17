@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { REACT_APP_BACKEND_ENDPOINT } from './constants'
 import { OptionsType } from './styles'
-import { IAppState } from './react-app-env'
+import { DropDown, IAppState } from './react-app-env'
 
 export const save = (payload: IAppState) => {
   return fetch(`${REACT_APP_BACKEND_ENDPOINT}/save`, {
@@ -27,18 +27,36 @@ export const load = (): Promise<IAppState> => {
     const Response = await fetch(kuve)
     const res = await Response.json()
 
-/*
-orig promijenicemo zbog date na   
-  const projectNamesDD = Object.entries(res)
-      .map((r) => (r[1] as any).pName)
+    /*     const projectNamesDD: DropDown = Object.entries(res.lists)
+      .map((r) => (r[1] as any).listId)
       .map((rl) => ({ value: rl, label: rl } as OptionsType))
  */
 
-    const projectNamesDD = res.dropDownItems
+    const projectNamesDD: DropDown = {
+      inPc: Object.entries(res.lists)
+        .filter((t) => (t[1] as any).tasks.length > 0)
+        .map(
+          (rl) =>
+            (({
+              value: (rl[1] as any).listId,
+              label: (rl[1] as any).listId,
+            } as unknown) as OptionsType)
+        ),
+      outPc: Object.entries(res.lists)
+        .filter((t) => (t[1] as any).tasks.length === 0)
+        .map(
+          (rl) =>
+            (({
+              value: (rl[1] as any).listId,
+              label: (rl[1] as any).listId,
+            } as unknown) as OptionsType)
+        ),
+    }
+
     return {
       ...res,
       dropDownItems: projectNamesDD,
-      sourceIngested: res.navLists,
+      sourceIngested: res.sourceIngested[0],
       draggedItem: undefined,
     } as Promise<IAppState>
   })()
@@ -54,7 +72,7 @@ export const ingestData = (): Promise<IAppState> => {
 
     const ere = {
       ...res,
-      dropDownItems: [],
+      dropDownItems: {} as DropDown,
       draggedItem: undefined,
       sourceIngested: clonedMongo,
     } as Promise<IAppState>

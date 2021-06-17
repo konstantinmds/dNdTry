@@ -8,12 +8,13 @@ import { DragItem } from '../../features/ddcomp/DragItem'
 import { useItemDrag } from '../../features/ddcomp/useItemDrag'
 import { Bit, CardContainer } from '../../styles'
 import { isHidden } from '../../utils/isHidden'
+import useContextMenu from '../../features/context/meniContext'
 
 interface CardCellProps {
   cellName: string
   seqNumber: string
   fileName: string
-  index: number
+  index: string
   id: string
   columnId: string
   isPreview?: boolean
@@ -34,6 +35,7 @@ const Card = ({
   const { state, dispatch } = useAppState()
   const [isHoovered, setIsHoovered] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
+
   const { drag } = useItemDrag({
     type: 'CARD',
     cellName,
@@ -52,24 +54,48 @@ const Card = ({
           return
         }
 
+        const fileName2 = item.fileName
+
         const dragIndex = item.index
         const hoverIndex = index
         const sourceColumn = item.columnId
         const targetColumn = columnId
-        const mongo = state.lists?.filter((m) =>
-          m.listId.includes('Code Cells')
-        )
 
         dispatch({
           type: 'MOVE_TASK',
-          payload: { dragIndex, hoverIndex, sourceColumn, targetColumn, mongo },
+          payload: {
+            dragIndex,
+            hoverIndex,
+            sourceColumn,
+            targetColumn,
+            fileName2,
+          },
         })
         // eslint-disable-next-line no-param-reassign
         item.index = hoverIndex
         // eslint-disable-next-line no-param-reassign
         item.columnId = targetColumn
       }
-    },
+     },
+    drop(item: any) {
+      const fileName2 = item.fileName
+
+      const dragIndex = item.index
+      const hoverIndex = index
+      const sourceColumn = item.columnId
+      const targetColumn = columnId
+
+      dispatch({
+        type: 'SAVE_TASK',
+        payload: {
+          dragIndex,
+          hoverIndex,
+          sourceColumn,
+          targetColumn,
+          fileName2,
+        },
+      })
+    }
   })
 
   const deleteCard = () => {
@@ -86,6 +112,7 @@ const Card = ({
       isHidden={isHidden(true, state.draggedItem, 'CARD', id)}
       isPreview={isPreview}
       ref={ref}
+      id={id}
     >
       <>
         <Bit
@@ -101,12 +128,16 @@ const Card = ({
         </Bit>
         <b>File name</b> <br />
         <div style={{ flexShrink: 1 }}>
-          {fileName.split(/\b(?![\s.])/).join('\n')}
+          {fileName && fileName.split(/\b(?![\s.])/).join('\n')}
         </div>
         <hr />
         <b>Cell name - </b> {cellName}
         <hr />
-        <b>Sequence Number - </b> {seqNumber}
+        {fileName.split(/.ipynb|.sql/).length > 1 ? (
+          <b>Sequence Number - {seqNumber || '0'} </b>
+        ) : (
+          <b />
+        )}
         <hr />
       </>
     </CardContainer>

@@ -9,7 +9,7 @@ export type CardDragItem = {
   cellName: string
   fileName: string
   seqNumber: string
-  index: number
+  index: string
   id: string
   columnId: string
   type: 'CARD'

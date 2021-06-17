@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import React, { useEffect, useState } from 'react'
 import { load } from './api'
-import { IAppState } from './react-app-env'
+import { DropDown, IAppState } from './react-app-env'
 
 export const withData = (
   WrappedComponent: React.ComponentType<
@@ -13,11 +13,12 @@ export const withData = (
     const [error, setError] = useState<Error | undefined>()
     const [initialState, setInitialState] = useState<IAppState>({
       lists: [],
-      dropDownItems: [],
+      dropDownItems: {} as DropDown,
       default: {},
       draggedItem: undefined,
       sourceIngested: null,
       selectedOption: null,
+      backdropVal: false,
     })
 
     useEffect(() => {
@@ -27,9 +28,11 @@ export const withData = (
 
           setInitialState({
             ...data,
+            lists: Array.of(data.lists[0]),
             dropDownItems: data.dropDownItems,
             draggedItem: undefined,
-            selectedOption: null,
+            selectedOption: data.dropDownItems[0],
+            backdropVal: false,
           } as any)
         } catch (e) {
           setError(e)

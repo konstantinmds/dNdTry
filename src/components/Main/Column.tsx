@@ -1,12 +1,24 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-param-reassign */
 import React, { useRef } from 'react'
+import { BiAbacus } from 'react-icons/bi'
 import { useDrop } from 'react-dnd'
 import { useAppState } from '../../AppStateContext'
 import { DragItem } from '../../features/ddcomp/DragItem'
 import { useItemDrag } from '../../features/ddcomp/useItemDrag'
-import { ColumnContainer, ColumnTitle } from '../../styles'
+import {
+  ColNameWrapper,
+  ColumnContainer,
+  ColumnTitle,
+  Menu,
+} from '../../styles'
 import { isHidden } from '../../utils/isHidden'
+
 import Card from './Card'
+import ChangeSeq from '../Modal/Modal'
+import { useBackdropContext } from '../../features/context/backdropContext'
+import useContextMenu from '../../features/context/meniContext'
 
 interface ColumnProps {
   listId: string
@@ -19,9 +31,13 @@ interface ColumnProps {
 export const Column = ({ listId, index, id, isPreview }: ColumnProps) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   // eslint-disable-next-line no-console
-  console.log('kolona', { listId, index, id, isPreview })
+  // console.log('kolona', { listId, index, id, isPreview })
   const { state, dispatch } = useAppState()
+  const { isBackdroped, setIsBackdroped } = useBackdropContext()
+
   const ref = useRef<HTMLDivElement>(null)
+
+  const { xPos, yPos, menu, card } = useContextMenu(ref)
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [, drop] = useDrop({
@@ -46,47 +62,113 @@ export const Column = ({ listId, index, id, isPreview }: ColumnProps) => {
         const targetColumn = id
         /* const mongo = {} */
 
-        if (sourceColumn === targetColumn) {
+        /*         if (sourceColumn === targetColumn) {
+          dispatch({
+            type: 'REORDER_TASKS',
+            payload: { dragIndex, hoverIndex, sourceColumn, targetColumn },
+          })
+
+          item.index = hoverIndex.toString()
+          item.columnId = targetColumn
           return
         }
-
+ */
         dispatch({
           type: 'MOVE_TASK',
           payload: { dragIndex, hoverIndex, sourceColumn, targetColumn },
         })
 
-        item.index = hoverIndex
+        item.index = hoverIndex.toString()
         item.columnId = targetColumn
       }
     },
   })
 
+  const bart = () => {
+    setIsBackdroped(!isBackdroped)
+  }
+
+  const filr = (): any => {
+    const lista = state.lists.filter((obj) => obj.listId === listId)[0]
+    const y = lista.listId.split(/.ipynb|.sql/)
+
+    const matt =
+      y.length === 1
+        ? lista.tasks // eslint-disable-next-line radix
+            .sort((a, b) => parseInt(a.seqNumber) - parseInt(b.seqNumber))
+        : lista.tasks // eslint-disable-next-line radix
+            .sort((a, b) => parseInt(a.seqNumber) - parseInt(b.seqNumber))
+            .filter((t) => {
+              if (state.lists[1]) {
+                return !state.lists[1].tasks.find((r) => {
+                  return r.cellName === t.cellName && r.fileName === t.fileName
+                })
+              }
+              return state.lists[0].tasks
+            })
+
+    const yi = matt
+
+    return yi
+  }
+
   const { drag } = useItemDrag({ type: 'COLUMN', id, index, listId })
 
   drag(drop(ref))
 
+  const bili = () => {
+    const theTask = state.lists[state.lists.length - 1].tasks.find(
+      (li) => li.taskId === card
+    )
+    if (theTask) {
+      // eslint-disable-next-line radix
+      theTask.seqNumber = (parseInt(theTask.seqNumber) + 10).toString()
+    }
+  }
   return (
-    <ColumnContainer
-      isPreview={isPreview}
-      ref={ref}
-      isHidden={isHidden(true, state.draggedItem, 'COLUMN', id)}
-    >
-      <ColumnTitle>{listId}</ColumnTitle>
-      {state.lists
-        .filter((obj) => obj.listId === listId)[0]
-        .tasks.map((task, i) => (
+    <>
+      {menu && (
+        <Menu
+          style={{
+            top: yPos,
+            left: xPos,
+            padding: '12px',
+            marginBottom: '3px',
+          }}
+        >
+          <li onClick={bili}>Add 10 to Sequence Number</li>
+          <li>Remove 10 from Sequence Number </li>
+        </Menu>
+      )}
+
+      {isBackdroped && (
+        <ChangeSeq
+          listId={state.lists[state.lists.length - 1].listId}
+          tasks={state.lists[state.lists.length - 1].tasks}
+        />
+      )}
+      <ColumnContainer
+        isPreview={isPreview}
+        ref={ref}
+        isHidden={isHidden(true, state.draggedItem, 'COLUMN', id)}
+      >
+        <ColNameWrapper>
+          <ColumnTitle>{listId}</ColumnTitle>
+          <BiAbacus onClick={() => bart()} />
+        </ColNameWrapper>
+        {filr().map((task, i) => (
           <Card
-            key={task.id}
-            id={task.id}
+            key={task.taskId || i}
+            id={'Card# '.concat(task.taskId) || 'Card# '.concat(i.toString())}
             columnId={id}
-            fileName={task.fileName}
-            seqNumber={task.seqNumber}
+            fileName={task.fileName === undefined ? listId : task.fileName}
+            seqNumber={task.seqNumber || '0'}
             cellName={task.cellName}
             index={i}
-            // eslint-disable-next-line react/no-array-index-key
           />
         ))}
-    </ColumnContainer>
+      </ColumnContainer>
+    </>
   )
 }
 

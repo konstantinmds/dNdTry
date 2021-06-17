@@ -2,7 +2,7 @@
 /// <reference types="react-scripts" />
 
 export interface Task {
-  id: string
+  taskId: string
   cellName: string
   seqNumber: string
   fileName: string
@@ -13,11 +13,17 @@ export interface List {
   tasks: Task[]
 }
 
+export interface DropDown {
+  inPc: OptionsType[]
+  outPc: OptionsType[]
+}
+
 export interface IAppState {
-  default: any,
+  default: any
   draggedItem: DragItem | undefined
-  dropDownItems: string[]
+  dropDownItems: DropDown
   lists: List[]
   sourceIngested: List | null
   selectedOption: any
+  backdropVal: boolean
 }

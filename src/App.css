@@ -1,7 +1,7 @@
 .app {
   display: contents;
-  zoom : "75%"
-
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
 }
 
 .header {

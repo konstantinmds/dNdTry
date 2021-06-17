@@ -30,6 +30,51 @@ border-radius: 20px 20px 20px 20px;
 margin-left: auto;
 `
 
+export const ColNameWrapper = styled.div`
+display: flex;
+flex-direction: row;
+align-content: space-between;  
+justify-content: space-between;
+`
+
+
+export const Backdrop = styled.div`
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+z-index: 10;
+background: rgba(0,0,0, 0.75);
+`
+
+export const Modal = styled.div`
+position: fixed;
+top: 20vh;
+left: 15%;
+width: 60%;
+z-index: 100;
+overflow: hidden;
+`
+
+export const ModalSeq = styled.div`
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+`
+
+export const ModalSeqHeader = styled.div`
+padding: 20px;
+font-weight: bold;
+`
+
+export const StyledInput = styled.input`
+width: 90%;
+padding: grey;
+border: 0px;
+font-size: 12px;
+cursor: pointer
+`
 
 
 export const AppBaseContainer = styled.div`
@@ -52,6 +97,30 @@ export const ColumnContainer = styled(DragPreviewContainer)`
   flex-grow: 0; 
   margin-right: auto;
   margin-left: auto;
+`
+
+export const Menu = styled.ul`
+  background-color: #ccbdbe42;
+  border-radius: 2px;
+  width: 300px;
+  font-size:16px;
+  padding-left: 0;
+  margin: 0;
+  position: absolute;
+  list-style: none;
+  z-index: 1;
+  .li {
+  padding: 0.5em 3em;
+  color: #000;
+  cursor: pointer;
+  background-color: #fff;
+  border: 4px solid #ccc;
+}
+
+ li:hover {
+  background-color: #aba6a6;
+  cursor:pointer
+}
 
 `
 
@@ -94,6 +163,18 @@ top: 0;
 width: 100%;
 z-index: 100;
 `
+export const FormDiv = styled.div`
+margin: 20px;
+display: flex;
+`
+
+export const InputFieldOuter = styled.input`
+background: transparent;
+border: groove;
+outline: none;
+width: 100%;
+`
+
 
 export const PrimaryButton1 = styled.button`
   background-color: #0078d4;
@@ -107,6 +188,26 @@ export const PrimaryButton1 = styled.button`
   border-radius: 12px 11px;
   outline: none;
   border:none
+`
+
+export const HandlerModal = styled.div`
+margin-bottom: 20px;
+padding-bottom: 20px;
+`
+
+export const PrimaryButton3 = styled.button`
+background-color: #0078d4;
+border: none;
+color: white;
+padding: 13px 13px 11px 11px;
+text-align: center;
+-webkit-text-decoration: none;
+text-decoration: none;
+display: inline-table;
+font-size: 16px;
+outline: none;
+border: none;
+margin-left: 20px;
 `
 
 export const Button2 = styled.button`

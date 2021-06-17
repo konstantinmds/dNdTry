@@ -54,16 +54,27 @@ const Header: React.FC<any> = () => {
       label: valuesFrom,
     })
 
-    state.selectedOption = {
+    /*   state.selectedOption = {
       value: valuesFrom,
       label: valuesFrom,
     }
-
+ */
     dispatch({
       type: 'CHANGE_PROJECT',
       payload: { text: valuesFrom, taskId: 'Choose Project' },
     })
   }
+
+  const groupedOptions = [
+    {
+      label: 'ACTIVE PROJECTS',
+      options: state.dropDownItems.inPc,
+    },
+    {
+      label: 'OTHER PROJECTS',
+      options: state.dropDownItems.outPc,
+    },
+  ]
 
   return (
     <div className="header">
@@ -73,7 +84,7 @@ const Header: React.FC<any> = () => {
       <ButtonRed>Import Project</ButtonRed>
       <div style={styles.select as React.CSSProperties}>
         <Select
-          options={state.dropDownItems as any}
+          options={groupedOptions}
           value={selectedOption as any}
           onChange={(e: ValueType<OptionsType, boolean>) =>
             handleChange(({

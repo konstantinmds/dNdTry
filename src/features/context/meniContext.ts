@@ -24,7 +24,11 @@ const useContextMenu = (outerRef) => {
         if (target) {
           const id = target.split('Card# ')[1]
           setCard(id)
-          showMenu(true)
+          if (id === 'undefined') {
+            showMenu(false)
+          } else {
+            showMenu(true)
+          }
         } else {
           showMenu(false)
           setCard(null)

@@ -133,10 +133,10 @@ const Card = ({
         <hr />
         <b>Cell name - </b> {cellName}
         <hr />
-        {fileName.split(/.ipynb|.sql/).length > 1 ? (
+        {columnId.split(/.ipynb|.sql/).length === 1 ? (
           <b>Sequence Number - {seqNumber || '0'} </b>
         ) : (
-          <b />
+          <p />
         )}
         <hr />
       </>

@@ -159,7 +159,7 @@ export const Column = ({ listId, index, id, isPreview }: ColumnProps) => {
         {filr().map((task, i) => (
           <Card
             key={task.taskId || i}
-            id={'Card# '.concat(task.taskId) || 'Card# '.concat(i.toString())}
+            id={'Card# '.concat(task.taskId === undefined ? 'un' : '21' ) || 'Card# '.concat(i.toString())}
             columnId={id}
             fileName={task.fileName === undefined ? listId : task.fileName}
             seqNumber={task.seqNumber || '0'}
